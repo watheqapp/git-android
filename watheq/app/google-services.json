@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "96166899429",
+    "firebase_url": "https://watheq-89cd7.firebaseio.com",
+    "project_id": "watheq-89cd7",
+    "storage_bucket": "watheq-89cd7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96166899429:android:9bbdc49ce64e72a2",
+        "android_client_info": {
+          "package_name": "com.watheq.watheq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "96166899429-t4blq3imoa4uio337n1pcrcrdck1lfgd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.watheq.watheq",
+            "certificate_hash": "740ed38c8b4ae9655b9094936b079fdf908d16df"
+          }
+        },
+        {
+          "client_id": "96166899429-qg0bbnju853sjld74btqd8fn73qo356e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6d6Cyz9bhoeyx1MQu8gTsLelZY_DwYvU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "96166899429-cfrigp65003rremdurq8f3qqq1unusq8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "Com.cloudz.Watheq"
+              }
+            },
+            {
+              "client_id": "96166899429-qg0bbnju853sjld74btqd8fn73qo356e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

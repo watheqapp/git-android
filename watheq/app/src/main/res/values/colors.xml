@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="united_blue">#ff4a90e2</color>
+    <color name="taupe_gray">#ff929292</color>
+    <color name="manatee">#ff969ba9</color>
+    <color name="white_smoke">#fff4f5f9</color>
+    <color name="shimmer_color_">#ffffff</color>
+    <color name="rose_madder">#ffda2138</color>
+    <color name="pastel_blue">#ffafb6c8</color>
+    <color name="snakbar_background">#B33f3f3f</color>
+    <color name="schedule_un_selected_day">#FFC7C7C7</color>
+    <color name="ghost_white">#fff5f8fc</color>
+    <color name="mdtp_transparent_black">#7f000000</color>
+</resources>
