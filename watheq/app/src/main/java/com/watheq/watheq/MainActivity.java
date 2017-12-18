@@ -74,7 +74,7 @@ public class MainActivity extends BaseActivity implements BaseFragment.FragmentN
                 .rootFragmentListener(this, tabs.length)
                 .build();
 
-
+        progressBar.setMax(100 * 5);
         switchTab(0);
 
         bottomTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -318,4 +318,14 @@ public class MainActivity extends BaseActivity implements BaseFragment.FragmentN
         animation.setInterpolator(new DecelerateInterpolator());
         animation.start();
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Fragment frg = getSupportFragmentManager().findFragmentById(R.id.content_frame);
+        if (frg != null) {
+            frg.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
 }

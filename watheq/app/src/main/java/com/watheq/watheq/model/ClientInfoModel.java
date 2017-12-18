@@ -10,6 +10,33 @@ import android.os.Parcelable;
 public class ClientInfoModel implements Parcelable {
     private String name;
     private String civilRegistry;
+    private String representativeName;
+    private String clientNationalID;
+    private int id;
+
+    public String getRepresentativeName() {
+        return representativeName;
+    }
+
+    public void setRepresentativeName(String representativeName) {
+        this.representativeName = representativeName;
+    }
+
+    public String getClientNationalID() {
+        return clientNationalID;
+    }
+
+    public void setClientNationalID(String clientNationalID) {
+        this.clientNationalID = clientNationalID;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public ClientInfoModel() {
     }

@@ -49,6 +49,11 @@
     <string name="add_another_client">اضافة موكل اخر</string>
     <string name="you_can_add_another_client">بامكانك اضافة اكثر من موكل بالضغط على العلامة في الاسفل</string>
     <string name="auth_for">الموكل له</string>
+    <string name="permission_location">Location</string>
+    <string name="choose_loc">اختيار العنوان</string>
+    <string name="choose_location_msg">من فضلك اختار مكان التسليم</string>
+    <string name="office">مكتب</string>
+    <string name="home">سكنك</string>
     <array name="tab_name">
         <item>وثق</item>
         <item>طلباتي</item>

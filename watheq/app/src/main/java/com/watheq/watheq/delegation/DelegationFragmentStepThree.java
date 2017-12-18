@@ -55,16 +55,17 @@ public class DelegationFragmentStepThree extends BaseDelegate implements Delegat
         DelegationStepTwoAdapter delegationStepTwoAdapter = new DelegationStepTwoAdapter(getContext(), this);
         if (sub != null) {
             if ((getActivity()) != null) {
-                ((MainActivity) getActivity()).updateToolbarTitle(sub.getName(), 100);
+                ((MainActivity) getActivity()).updateToolbarTitle(sub.getName(), 100*2);
             }
             delegationStepTwoAdapter.setProductList(sub.getSubs());
         }
         recyclerView.setAdapter(delegationStepTwoAdapter);
 
+
     }
 
     @Override
     public void onItemClicked(Sub sub) {
-        pushFragment(new ClientInformationFragment(),false);
+        pushFragment(ClientInformationFragment.newInstance(sub.getId()),false);
     }
 }

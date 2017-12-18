@@ -27,6 +27,9 @@ import static android.text.TextUtils.isEmpty;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
+
+    private double lat, lng;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -115,4 +118,19 @@ public abstract class BaseActivity extends AppCompatActivity {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
+    }
+
+    public double getLng() {
+        return lng;
+    }
+
+    public void setLng(double lng) {
+        this.lng = lng;
+    }
 }

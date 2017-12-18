@@ -19,6 +19,7 @@ import com.watheq.watheq.utils.Errors;
 import com.watheq.watheq.utils.UserManager;
 import com.watheq.watheq.views.RecyclerViewEmptySupport;
 
+import br.com.simplepass.loading_button_lib.customViews.CircularProgressButton;
 import butterknife.ButterKnife;
 
 /**
@@ -29,6 +30,12 @@ public abstract class BaseFragment extends Fragment implements BaseHandlingError
 
     private FragmentNavigation mFragmentNavigation;
     private BaseActivity parentActivity;
+
+    public BaseActivity getParentActivity() {
+        if (parentActivity != null)
+            return parentActivity;
+        else return null;
+    }
 
 
     @Override
@@ -92,6 +99,11 @@ public abstract class BaseFragment extends Fragment implements BaseHandlingError
             ShimmerFrameLayout shimmerFrameLayout = getView().findViewById(R.id.shimmer_view_container);
             shimmerFrameLayout.stopShimmerAnimation();
             shimmerFrameLayout.setVisibility(View.GONE);
+        }
+
+        if (getView().findViewById(R.id.confirm_btn) != null) {
+            CircularProgressButton circularProgressButton = getView().findViewById(R.id.confirm_btn);
+            circularProgressButton.revertAnimation();
         }
 
         if (code == Errors.NO_INTERNET)

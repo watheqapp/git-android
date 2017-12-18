@@ -4,6 +4,8 @@ import com.watheq.watheq.model.CompleteProfileBody;
 import com.watheq.watheq.model.LoginBody;
 import com.watheq.watheq.model.LoginModelResponse;
 import com.watheq.watheq.model.MainCategoriesResponse;
+import com.watheq.watheq.model.OrderLawyerBody;
+import com.watheq.watheq.model.OrderLawyerResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -26,4 +28,7 @@ public interface ClientServices {
 
     @GET("api/auth/category/list")
     Call<MainCategoriesResponse> getCategories(@Header("Authorization") String auth);
+
+    @POST("api/auth/order")
+    Call<OrderLawyerResponse> orderLiveResponse(@Header("Authorization") String auth, @Body OrderLawyerBody orderLawyerBody);
 }

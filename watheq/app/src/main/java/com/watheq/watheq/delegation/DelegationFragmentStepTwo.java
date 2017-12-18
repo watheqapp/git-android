@@ -4,14 +4,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.watheq.watheq.MainActivity;
 import com.watheq.watheq.R;
-import com.watheq.watheq.base.BaseFragment;
 import com.watheq.watheq.model.Category;
 import com.watheq.watheq.model.Sub;
 import com.watheq.watheq.views.RecyclerViewEmptySupport;
@@ -55,7 +52,7 @@ public class DelegationFragmentStepTwo extends BaseDelegate implements Delegatio
         DelegationStepTwoAdapter delegationStepTwoAdapter = new DelegationStepTwoAdapter(getContext(), this);
         if (category != null) {
             if ((getActivity()) != null) {
-                ((MainActivity) getActivity()).updateToolbarTitle(category.getName(), 50);
+                ((MainActivity) getActivity()).updateToolbarTitle(category.getName(), 100);
             }
             delegationStepTwoAdapter.setProductList(category.getSubs());
         }

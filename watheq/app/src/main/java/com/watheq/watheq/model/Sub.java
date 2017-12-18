@@ -9,8 +9,11 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sub implements Parcelable{
+public class Sub implements Parcelable {
 
+    @SerializedName("id")
+    @Expose
+    private int id;
     @SerializedName("name")
     @Expose
     private String name;
@@ -28,7 +31,16 @@ public class Sub implements Parcelable{
     @Expose
     private String disc;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     protected Sub(Parcel in) {
+        id = in.readInt();
         name = in.readString();
         cost = in.readInt();
         hasSubs = in.readInt();
@@ -95,6 +107,7 @@ public class Sub implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(id);
         parcel.writeString(name);
         parcel.writeInt(cost);
         parcel.writeInt(hasSubs);
