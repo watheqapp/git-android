@@ -1,68 +1,144 @@
 <resources>
     <string name="app_name">Watheq</string>
     <string name="font_bold">fonts/DinNextMedium.ttf</string>
-    <string name="logn_scrn_lable">تسجيل دخول</string>
-    <string name="logn_scrn_msg">ادخل رقم جوالك ثم كود التحقق من الرساله التي ستصلك على هذا الرقم</string>
-    <string name="logn_scrn_are_u_lawyer">هل أنت موثق ؟</string>
-    <string name="logn_scrn_download_app">حمل تطبيق الموثقين من هنا</string>
-    <string name="logn_scrn_confirm_num">أكد الرقم</string>
-    <string name="logn_scrn_confirm">أكد الرقم </string>
-    <string name="logn_scrn_resend">اعادة ارسال الكود</string>
-    <string name="complt_prof_scrn_welcome">مرحبا</string>
-    <string name="complt_prof_scrn_msg">نحتاج لاضافة بعض البيانات لتظهر في ملفك الشخصي</string>
-    <string name="complt_prof_scrn_username_hint">اسم المستخدم</string>
-    <string name="complt_prof_scrn_email_hint">الايميل</string>
-    <string name="complt_prof_scrn_confirm">تأكيد</string>
-    <string name="complt_prof_scrn_privcy_policy">موافق على كافة الأحكام والشروط</string>
-    <string name="validation_error_required">املأ الحقول الاجباريه أولاً</string>
-    <string name="validation_error_email">ادخل بريد الكتروني صحيح</string>
+    <string name="logn_scrn_lable">Login</string>
+    <string name="logn_scrn_msg">Enter your mobile number and the verification code of the message you will receive on this number</string>
+    <string name="logn_scrn_are_u_lawyer">Are you notarized?</string>
+    <string name="logn_scrn_download_app">Download the Notaries application from here</string>
+    <string name="logn_scrn_confirm_num">Send Phone Number</string>
+    <string name="logn_scrn_confirm">Send Verification Code</string>
+    <string name="logn_scrn_resend">Resend Verification Code</string>
+    <string name="complt_prof_scrn_welcome">Hello</string>
+    <string name="complt_prof_scrn_msg">You need to add some data to appear in profile</string>
+    <string name="complt_prof_scrn_username_hint">user Name</string>
+    <string name="complt_prof_scrn_email_hint">EMail</string>
+    <string name="complt_prof_scrn_confirm">Confirm</string>
+    <string name="complt_prof_scrn_privcy_policy">Agree to all terms and conditions</string>
+    <string name="validation_error_required">Please fill all fields</string>
+    <string name="validation_error_email">Invalid Email Format</string>
     <string name="permission_external_storage_rationale">External Storage Permission</string>
     <string name="permission_location">Location</string>
-    <string name="allow">السماح</string>
-    <string name="deny">حظر</string>
-    <string name="logn_scrn_phone_empty">من فضلك ادخل رقم الهاتف</string>
-    <string name="logn_scrn_verfe_empty">من فضلك ادخل كود التحقق</string>
-    <string name="all_no_internet">يبدو انك تواجه مشكله بالاتصال بالانترنت الان</string>
-    <string name="invalid_code">كود خاطئ, من فضلك استخدم الكود الصحيح او اعد الارسال</string>
-    <string name="logn_scrn_incorrect_number">من فضلك ادخل رقم هاتف سعودي صحيح</string>
-    <string name="currpted_file">ملف تالف</string>
-    <string name="file_size">حجم الملف يجب ان لا يتعدي 1 ميجا</string>
-    <string name="no_internet">لا يوجد اتصال بالإنترنت</string>
-    <string name="wathaq">وثق</string>
-    <string name="lang">اللغة</string>
-    <string name="credit">الائتمان</string>
-    <string name="oprations">عملياتك</string>
-    <string name="report_problem">بلغ عن مشكلة</string>
-    <string name="logout">تسجيل خروج</string>
-    <string name="privacy">الشروط والأحكام</string>
-    <string name="help">المساعدة</string>
-    <string name="policy">سياسة الخصوصية</string>
-    <string name="setting">الاعدادات</string>
+    <string name="allow">Allow</string>
+    <string name="deny">Deny</string>
+    <string name="logn_scrn_phone_empty">Enter Phone number!</string>
+    <string name="logn_scrn_verfe_empty">Enter your verification code!</string>
+    <string name="all_no_internet">It seems you have internet problem</string>
+    <string name="invalid_code">Enter a valid verification number</string>
+    <string name="logn_scrn_incorrect_number">Enter a valid Phone number</string>
+    <string name="currpted_file">The file is corrupted</string>
+    <string name="file_size">File size should not exceed 1 MB</string>
+    <string name="no_internet">No Internet Connection</string>
+    <string name="wathaq">Watheq</string>
+    <string name="lang">Change Language</string>
+    <string name="credit">Credit Card</string>
+
+    <string name="report_problem">Report Problem</string>
+    <string name="logout">Logout</string>
+    <string name="privacy">Terms and Conditions</string>
+    <string name="help">Help</string>
+    <string name="policy">Privacy Policy</string>
+    <string name="setting">Settings</string>
     <string name="arabic">العربيه</string>
     <string name="english">English</string>
-    <string name="something_wrong">هناك خطأ ما</string>
-    <string name="auth_kind">صفة الموكل</string>
-    <string name="name">الأسم</string>
-    <string name="civil_registry">السجل المدني</string>
-    <string name="commercial_register">(السجل التجاري في حالة الشركات)</string>
-    <string name="next_step">الخطوة التالية</string>
-    <string name="add_another_client">اضافة موكل اخر</string>
-    <string name="you_can_add_another_client">بامكانك اضافة اكثر من موكل بالضغط على العلامة في الاسفل</string>
-    <string name="auth_for">الموكل له</string>
-    <string name="choose_location_msg">من فضلك اختار مكان التسليم</string>
-    <string name="office">مكتب</string>
-    <string name="home">سكنك</string>
-    <string name="choose_loc">اختيار العنوان</string>
+    <string name="something_wrong">Something went wrong</string>
+    <string name="logout_msg">Are you sure you want to log out?</string>
+    <string name="name"><font size="12">Name</font></string>
+    <string name="civil_registry"><font size="12">Civil Registry</font></string>
+    <string name="chat_msg">Hello. this is your conversation with</string>
+    <string name="finish">Cancel</string>
+    <string name="yes">Yes</string>
+    <string name="next_step">Next Step</string>
+
+    <string name="choose_location_msg">Please choose delivery location</string>
+    <string name="ksa_currency">SR</string>
+    <string name="office">Office</string>
+    <string name="home">Residence</string>
+    <string name="choose_loc">Choose Address</string>
+    <string name="complete_order">Complete Order</string>
+    <string name="service_num_holder">OrderNumber</string>
+    <string name="my_orders">My Orders</string>
+    <string name="no_closed_orders">No Orders</string>
+    <string name="no_opened_orders">No Orders</string>
+    <string name="no_new_orders">No Orders</string>
+    <string name="authorized_place">Maazon Location</string>
+    <string name="client_place">Client Location</string>
+    <string name="searching">Searching ... </string>
+    <string name="searching_msg">You will be looking for the closest registrar to approve your application or you can choose a certified document from here</string>
+    <string name="choose_lawyer">Choose a specific documentor</string>
+    <string name="search">Search</string>
+    <string name="new_order">New order</string>
+    <string name="letter_num"><font size="12">letter Number</font></string>
+    <string name="date">letter Date</string>
+    <string name="arrived_date">Arrival Date</string>
+    <string name="request_num">Order Number #</string>
+    <string name="call_me">اتصل بي لأتمام الطلب</string>
     <array name="tab_name">
         <item>Watheq</item>
         <item>My Orders</item>
         <item>Notifications</item>
         <item>Profile</item>
     </array>
-    <string name="service">خدمة</string>
-    <string name="consalt">استشارة</string>
+    <string name="search_lawyer">Select a lawyer</string>
+    <string name="dating_place">Attendance place</string>
+    <string name="service">Service</string>
+    <string name="consalt">Service</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="client_info">بيانات الموكِل</string>
+
+    <string name="client_info">Agent name</string>
     <string name="title_activity_maps">Map</string>
+    <string name="new_orders">New</string>
+    <string name="opened_orders">Opened</string>
+    <string name="closed_orders">Finished</string>
+    <string name="place_detail_hint"><font size="12">Write Address details</font></string>
+    <string name="arrived_time">Arrival Time</string>
+    <string name="one_hour">Hour</string>
+    <string name="two_hours">2 Hours</string>
+    <string name="three_hours">3 Hours</string>
+    <string name="will_go_to_at">I go to the office of the binder during</string>
+    <string name="will_come_at">Ask the binder presence during</string>
+    <string name="order_maazon_around">I am Asking Maazon to attend at</string>
+    <string name="go_to_maazon_around">I will attend to office at</string>
+    <string name="another_time">Later Time</string>
+    <string name="authenticate">authorize</string>
+    <string name="choose_laywer">Choose a specific documentor</string>
+    <string name="no_lawyers">No Lawyers</string>
+    <string name="no_notification">No Notifications</string>
+    <string name="notification">Notifications</string>
+
+    /// not need
+
+    <string name="placeholder">Placeholder</string>
+    <string name="hint_message">Type your message..</string>
+    <string name="error_loading_user">Couldn\'t load user</string>
+    <string name="today">Today</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="empty_view_thread">Send the first message!</string>
+
+    <string name="message_message_copied">Copied to clipboard</string>
+    <string name="clipboard_title_copied_message">Copied message</string>
+    <string name="send">Send</string>
+    <string name="create_agency">Setup authorization</string>
+    <string name="cancel_agency">Cancel authorization</string>
+    <string name="againt_kind">authorization description</string>
+    <string name="delivery_location">Receipt of the Authorization</string>
+    <string name="dating_time">Ask for an interview during</string>
+    <string name="agency">Authorization</string>
+    <string name="contract">Contracts</string>
+    <string name="marriage">Marriage</string>
+    <string name="send_request">Send Order</string>
+    <string name="sign_contract">Validation of company establishment</string>
+    <string name="not_needed">Validate of company contract</string>
+
+    <string name="personly">Individual</string>
+    <string name="orgnization">Institution</string>
+    <string name="company">Company</string>
+    <string name="location_has_been_updated">Address added</string>
+    <string name="rate">Rate</string>
+    <string name="message">Message</string>
+    <string name="msg_title">Title</string>
+    <string name="call_us">Contact us</string>
+    <string name="your_request_submited">We received your message</string>
+    <string name="min_length">The number of characters must be at least 3 characters</string>
+    <string name="cancel">Cancel</string>
+
 </resources>

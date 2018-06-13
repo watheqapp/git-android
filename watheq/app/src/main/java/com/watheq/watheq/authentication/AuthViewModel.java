@@ -8,8 +8,10 @@ import android.arch.lifecycle.ViewModel;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 
+import com.watheq.watheq.model.BaseModel;
 import com.watheq.watheq.model.LoginBody;
 import com.watheq.watheq.model.LoginModelResponse;
+import com.watheq.watheq.model.RegisterDeviceBody;
 import com.watheq.watheq.repository.LoginRepo;
 import com.watheq.watheq.repository.LoginRepoImpl;
 
@@ -21,11 +23,13 @@ public class AuthViewModel extends ViewModel {
 
     private MutableLiveData<Long> intervalTime = new MutableLiveData<>();
     private MediatorLiveData<LoginModelResponse> loginLiveModel;
+    private MediatorLiveData<BaseModel> registerTokenModel;
     private LoginRepo loginRepo;
 
     public AuthViewModel() {
         loginRepo = new LoginRepoImpl();
         loginLiveModel = new MediatorLiveData<>();
+        registerTokenModel = new MediatorLiveData<>();
     }
 
     void setIntervalTime(long timeToStart) {
@@ -60,5 +64,15 @@ public class AuthViewModel extends ViewModel {
             }
         });
         return loginLiveModel;
+    }
+
+    LiveData<BaseModel> registerDeviceToken(String auth, final RegisterDeviceBody registerDeviceBody) {
+        registerTokenModel.addSource(loginRepo.registerToken(auth,registerDeviceBody), new Observer<BaseModel>() {
+            @Override
+            public void onChanged(@Nullable BaseModel baseModel) {
+                registerTokenModel.setValue(baseModel);
+            }
+        });
+        return registerTokenModel;
     }
 }

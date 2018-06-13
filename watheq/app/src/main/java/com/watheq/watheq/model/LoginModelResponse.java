@@ -27,7 +27,7 @@ public class LoginModelResponse extends BaseModel {
     @SerializedName("data")
     private Response response;
 
-    @NonNull
+//    @NonNull
     public Response getResponse() {
         return response;
     }
@@ -64,6 +64,12 @@ public class LoginModelResponse extends BaseModel {
         @SerializedName("token")
         @Expose
         private String token;
+        @SerializedName("latitude")
+        @Expose
+        private String latitude;
+        @SerializedName("longitude")
+        @Expose
+        private String longitude;
 
         public Integer getId() {
             return id;
@@ -103,6 +109,21 @@ public class LoginModelResponse extends BaseModel {
 
         public void setPhone(String phone) {
             this.phone = phone;
+        }
+        public String getLatitude() {
+            return latitude;
+        }
+
+        public void setLatitude(String latitude) {
+            this.latitude = latitude;
+        }
+
+        public String getLongitude() {
+            return longitude;
+        }
+
+        public void setLongitude(String longitude) {
+            this.longitude = longitude;
         }
 
         public Integer getCreatedAt() {

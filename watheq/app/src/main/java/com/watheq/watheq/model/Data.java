@@ -37,7 +37,7 @@ public class Data {
     private Category category;
     @SerializedName("lawyer")
     @Expose
-    private Object lawyer;
+    private Lawer lawyer;
     @SerializedName("client")
     @Expose
     private Client client;
@@ -49,7 +49,7 @@ public class Data {
     private long acceptedAt;
     @SerializedName("created_at")
     @Expose
-    private int createdAt;
+    private long createdAt;
 
     public int getId() {
         return id;
@@ -131,11 +131,11 @@ public class Data {
         this.category = category;
     }
 
-    public Object getLawyer() {
+    public Lawer getLawyer() {
         return lawyer;
     }
 
-    public void setLawyer(Object lawyer) {
+    public void setLawyer(Lawer lawyer) {
         this.lawyer = lawyer;
     }
 
@@ -163,11 +163,11 @@ public class Data {
         this.acceptedAt = acceptedAt;
     }
 
-    public int getCreatedAt() {
+    public long getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(int createdAt) {
+    public void setCreatedAt(long createdAt) {
         this.createdAt = createdAt;
     }
 

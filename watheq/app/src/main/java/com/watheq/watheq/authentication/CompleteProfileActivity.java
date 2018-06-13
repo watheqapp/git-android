@@ -21,9 +21,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.watheq.watheq.MainActivity;
 import com.watheq.watheq.R;
 import com.watheq.watheq.base.BaseActivity;
+import com.watheq.watheq.beans.User;
 import com.watheq.watheq.model.CompleteProfileBody;
 import com.watheq.watheq.model.LoginModelResponse;
 import com.watheq.watheq.utils.FileUtils;
@@ -57,13 +63,34 @@ public class CompleteProfileActivity extends BaseActivity {
     CircleImageView profileImage;
     private CompleteProfileViewModel completeProfileViewModel;
     private String imageBase64;
+    private DatabaseReference mDatabase;
 
+
+    private void addUserToDatabase(LoginModelResponse firebaseUser) {
+        User user = new User(
+                firebaseUser.getResponse().getName(),
+                firebaseUser.getResponse().getPhone(),
+                String.valueOf(firebaseUser.getResponse().getId()), "android"
+        );
+
+        mDatabase.child("users")
+                .child(user.getUid()).setValue(user);
+
+        String instanceId = FirebaseInstanceId.getInstance().getToken();
+        if (instanceId != null) {
+            mDatabase.child("users")
+                    .child(String.valueOf(firebaseUser.getResponse().getId()))
+                    .child("instanceId")
+                    .setValue(instanceId);
+        }
+    }
 
     private final Observer<LoginModelResponse> getCompleteProfileResponse = new Observer<LoginModelResponse>() {
         @Override
         public void onChanged(@Nullable LoginModelResponse completeProfileResponse) {
             if (completeProfileResponse.getThrowable() == null
                     && completeProfileResponse.getCode() == 200) {
+                addUserToDatabase(completeProfileResponse);
                 UserManager.getInstance().addUser(completeProfileResponse);
                 MainActivity.start(CompleteProfileActivity.this);
                 confirmBtn.postDelayed(new Runnable() {
@@ -90,7 +117,7 @@ public class CompleteProfileActivity extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         completeProfileViewModel = ViewModelProviders.of(this).get(CompleteProfileViewModel.class);
-
+        mDatabase = FirebaseDatabase.getInstance().getReference();
     }
 
     @Override
@@ -187,7 +214,8 @@ public class CompleteProfileActivity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICKER_GALLERY_SELECT) {
-            imageBase64 = onResult(data);
+            imageBase64 = FileUtils.onResult(data, this);
+            profileImage.setImageURI(data.getData());
         }
     }
 

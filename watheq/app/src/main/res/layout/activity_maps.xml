@@ -1,8 +1,61 @@
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:map="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.watheq.watheq.delegation.MapsActivity" />
+    android:layout_height="match_parent">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.watheq.watheq.delegation.MapsActivity" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/dummy"
+        android:layout_centerInParent="true"
+        android:src="@drawable/shape" />
+
+    <ImageView
+        android:id="@+id/dummy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <!--<EditText-->
+    <!--android:id="@+id/address_details"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_gravity="bottom"-->
+    <!--android:layout_marginBottom="@dimen/_90sdp"-->
+    <!--android:layout_marginEnd="@dimen/_30sdp"-->
+    <!--android:layout_marginStart="@dimen/_30sdp"-->
+    <!--android:background="@drawable/rounded_corner"-->
+    <!--android:hint="@string/place_detail_hint"-->
+    <!--android:imeOptions="actionDone"-->
+    <!--android:paddingBottom="@dimen/_10sdp"-->
+    <!--android:paddingLeft="@dimen/_10sdp"-->
+    <!--android:paddingRight="@dimen/_10sdp"-->
+    <!--android:paddingTop="@dimen/_10sdp" />-->
+
+    <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+        android:id="@+id/confirm_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:background="@drawable/rounded_corner_blue"
+        android:gravity="center"
+        android:text="@string/choose_loc"
+        android:textColor="@android:color/white"
+        android:transitionName="simple_activity_transition"
+        app:initialCornerAngle="@dimen/_10sdp"
+        app:spinning_bar_color="@android:color/white" />
+</RelativeLayout>

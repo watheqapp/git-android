@@ -1,6 +1,7 @@
 package com.watheq.watheq.base;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
@@ -14,7 +15,7 @@ import android.view.ViewGroup;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.watheq.watheq.R;
 import com.watheq.watheq.authentication.AuthenticationActivity;
-import com.watheq.watheq.delegation.MainCategoriesListAdapter;
+
 import com.watheq.watheq.utils.Errors;
 import com.watheq.watheq.utils.UserManager;
 import com.watheq.watheq.views.RecyclerViewEmptySupport;
@@ -89,11 +90,13 @@ public abstract class BaseFragment extends Fragment implements BaseHandlingError
                 getActivity().finish();
             return;
         }
-        if (getView() != null && getView().findViewById(R.id.recycler_view) != null) {
-            RecyclerViewEmptySupport recyclerViewEmptySupport = getView().findViewById(R.id.recycler_view);
-            recyclerViewEmptySupport.setAdapter(new MainCategoriesListAdapter(getContext(), null));
-            recyclerViewEmptySupport.setEmptyView(getView().findViewById(R.id.empty_view));
-        }
+//        if (getView() != null && getView().findViewById(R.id.recycler_view) != null) {
+//            RecyclerViewEmptySupport recyclerViewEmptySupport = getView().findViewById(R.id.recycler_view);
+//            if (recyclerViewEmptySupport.getAdapter() == null) {
+//                recyclerViewEmptySupport.setAdapter(new MainCategoriesListAdapter(getContext(), null));
+//                recyclerViewEmptySupport.setEmptyView(getView().findViewById(R.id.empty_view));
+//            }
+//        }
 
         if (getView().findViewById(R.id.shimmer_view_container) != null) {
             ShimmerFrameLayout shimmerFrameLayout = getView().findViewById(R.id.shimmer_view_container);
@@ -110,6 +113,12 @@ public abstract class BaseFragment extends Fragment implements BaseHandlingError
             showNotification(getString(R.string.all_no_internet));
         else if (code == Errors.SERVER_ERROR)
             showNotification(getString(R.string.something_wrong));
+        if (getView() != null && getView().findViewById(R.id.empty_view) != null) {
+            getView().findViewById(R.id.empty_view).setVisibility(View.VISIBLE);
+        }
+        if(getView() != null && getView().findViewById(R.id.loading) != null){
+            getView().findViewById(R.id.loading).setVisibility(View.GONE);
+        }
     }
 
     public void pushFragment(Fragment fragment, boolean isAnim) {

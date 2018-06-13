@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.watheq.watheq.delegation.SearchingForLawyer">
+
+    <include layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30sdp">
+
+        <ImageView
+            android:id="@+id/first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_40sdp"
+            android:src="@drawable/ic_avatar" />
+
+
+        <ImageView
+            android:id="@+id/center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_avatar" />
+
+        <ImageView
+            android:id="@+id/third"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_40sdp"
+            android:src="@drawable/ic_avatar" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/order_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:gravity="center"
+        android:text="@string/searching"
+        android:textColor="@color/rose_madder"
+        android:textSize="23sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:gravity="center"
+        android:text="@string/searching"
+        android:textColor="@color/rose_madder"
+        android:textSize="23sp" />
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginEnd="@dimen/_20sdp"-->
+    <!--android:layout_marginStart="@dimen/_20sdp"-->
+    <!--android:layout_marginTop="@dimen/_15sdp"-->
+    <!--android:gravity="center"-->
+    <!--android:text="@string/searching_msg"-->
+    <!--android:textColor="@color/pastel_blue"-->
+    <!--android:textSize="15sp" />-->
+
+    <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+        android:id="@+id/timer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@drawable/rounded_corner_blue"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        app:initialCornerAngle="@dimen/_10sdp"
+        app:spinning_bar_color="@android:color/white" />
+
+    <TextView
+        android:id="@+id/cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@drawable/transparent_rounded"
+        android:gravity="center"
+        android:paddingBottom="@dimen/_13sdp"
+        android:paddingTop="@dimen/_13sdp"
+        android:text="@string/cancel"
+        android:textColor="@color/united_blue" />
+
+    <TextView
+        android:id="@+id/choose_lawyer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@drawable/transparent_rounded"
+        android:gravity="center"
+        android:paddingBottom="@dimen/_13sdp"
+        android:paddingTop="@dimen/_13sdp"
+        android:text="@string/choose_lawyer"
+        android:textColor="@color/united_blue"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/call_me"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@drawable/transparent_rounded"
+        android:gravity="center"
+        android:paddingBottom="@dimen/_13sdp"
+        android:paddingTop="@dimen/_13sdp"
+        android:text="@string/call_me"
+        android:textColor="@color/united_blue"
+        android:visibility="invisible" />
+
+</LinearLayout>

@@ -23,7 +23,6 @@
                 android:layout_marginBottom="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:gravity="center"
-                android:text="@string/auth_for"
                 android:textColor="@color/rose_madder"
                 android:textSize="15sp" />
 
@@ -38,6 +37,7 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:background="@drawable/rounded_corner"
                 android:hint="@string/name"
+                android:inputType="text"
                 android:paddingBottom="@dimen/_15sdp"
                 android:paddingEnd="@dimen/_5sdp"
                 android:paddingStart="@dimen/_5sdp"
@@ -54,6 +54,7 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:background="@drawable/rounded_corner"
                 android:hint="@string/civil_registry"
+                android:inputType="number"
                 android:paddingBottom="@dimen/_15sdp"
                 android:paddingEnd="@dimen/_5sdp"
                 android:paddingStart="@dimen/_5sdp"
@@ -65,8 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_30sdp"
                 android:layout_marginStart="@dimen/_30sdp"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:text="@string/commercial_register" />
+                android:layout_marginTop="@dimen/_5sdp" />
 
         </LinearLayout>
 

@@ -15,14 +15,20 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.watheq.watheq.account.MyAccountFragment;
 import com.watheq.watheq.base.BaseActivity;
 import com.watheq.watheq.base.BaseFragment;
+import com.watheq.watheq.beans.User;
 import com.watheq.watheq.delegation.BaseDelegate;
-import com.watheq.watheq.delegation.DelegationFragment;
-import com.watheq.watheq.account.MyAccountFragment;
+import com.watheq.watheq.delegation.delegationNew.RequestFragment;
+import com.watheq.watheq.model.LoginModelResponse;
+import com.watheq.watheq.myOrder.MyOrdersFragment;
 import com.watheq.watheq.notifications.NotificationsFragment;
-import com.watheq.watheq.prices.MyOrdersFragment;
 import com.watheq.watheq.utils.FragmentHistory;
+import com.watheq.watheq.utils.UserManager;
 import com.watheq.watheq.utils.Utils;
 import com.watheq.watheq.views.FragNavController;
 
@@ -56,15 +62,26 @@ public class MainActivity extends BaseActivity implements BaseFragment.FragmentN
     ContentLoadingProgressBar progressBar;
     @BindView(R.id.progress_container)
     View progressContainer;
+    @BindView(R.id.cost)
+    TextView costTv;
 
     private FragNavController mNavController;
     private FragmentHistory fragmentHistory;
+    private int tabPosition;
+    private DatabaseReference mDatabase;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initToolbar();
         initTab();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        addUserToDatabase(UserManager.getInstance().getUser());
+//        for (int aMTabIconsSelected : mTabIconsSelected) {
+//            Drawable mDrawable = ContextCompat.getDrawable(this, aMTabIconsSelected);
+//            mDrawable.setColorFilter(new
+//                    PorterDuffColorFilter(ContextCompat.getColor(this, R.color.united_blue), PorterDuff.Mode.MULTIPLY));
+//        }
 
         fragmentHistory = new FragmentHistory();
 
@@ -84,6 +101,7 @@ public class MainActivity extends BaseActivity implements BaseFragment.FragmentN
                 fragmentHistory.push(tab.getPosition());
 
                 switchTab(tab.getPosition());
+                tabPosition = tab.getPosition();
 
             }
 
@@ -105,10 +123,13 @@ public class MainActivity extends BaseActivity implements BaseFragment.FragmentN
 
     }
 
+    public void backToFirstFragment() {
+        mNavController.clearStack();
+        switchTab(tabPosition);
+    }
+
     private void initToolbar() {
         setSupportActionBar(toolbar);
-
-
     }
 
     @Override
@@ -144,7 +165,8 @@ public class MainActivity extends BaseActivity implements BaseFragment.FragmentN
 
     private void switchTab(int position) {
         mNavController.switchTab(position);
-        if (mNavController.getCurrentFrag() instanceof MyAccountFragment)
+        if (mNavController.getCurrentFrag() instanceof MyAccountFragment
+                || mNavController.getCurrentFrag() instanceof RequestFragment)
             toolbar.setVisibility(View.GONE);
         else
             toolbar.setVisibility(View.VISIBLE);
@@ -196,7 +218,8 @@ public class MainActivity extends BaseActivity implements BaseFragment.FragmentN
             }
 
         }
-        if (mNavController.getCurrentFrag() instanceof MyAccountFragment)
+        if (mNavController.getCurrentFrag() instanceof MyAccountFragment
+                || mNavController.getCurrentFrag() instanceof RequestFragment)
             toolbar.setVisibility(View.GONE);
         else
             toolbar.setVisibility(View.VISIBLE);
@@ -219,6 +242,7 @@ public class MainActivity extends BaseActivity implements BaseFragment.FragmentN
         }
     }
 
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -231,7 +255,8 @@ public class MainActivity extends BaseActivity implements BaseFragment.FragmentN
     public void pushFragment(Fragment fragment, boolean isAnim) {
         if (mNavController != null) {
             mNavController.pushFragment(fragment, isAnim);
-            if (mNavController.getCurrentFrag() instanceof MyAccountFragment)
+            if (mNavController.getCurrentFrag() instanceof MyAccountFragment
+                    || mNavController.getCurrentFrag() instanceof RequestFragment)
                 toolbar.setVisibility(View.GONE);
             else
                 toolbar.setVisibility(View.VISIBLE);
@@ -261,10 +286,28 @@ public class MainActivity extends BaseActivity implements BaseFragment.FragmentN
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
     }
 
+    private void addUserToDatabase(LoginModelResponse firebaseUser) {
+        User user = new User(
+                firebaseUser.getResponse().getName(),
+                firebaseUser.getResponse().getPhone(),
+                String.valueOf(firebaseUser.getResponse().getId()), "android"
+        );
+
+        mDatabase.child("users")
+                .child(user.getUid()).setValue(user);
+
+        String instanceId = FirebaseInstanceId.getInstance().getToken();
+        if (instanceId != null) {
+            mDatabase.child("users")
+                    .child(String.valueOf(firebaseUser.getResponse().getId()))
+                    .child("instanceId")
+                    .setValue(instanceId);
+        }
+    }
+
 
     @Override
     public void onFragmentTransaction(Fragment fragment, FragNavController.TransactionType transactionType) {
-        //do fragmentty stuff. Maybe change title, I'm not going to tell you how to live your life
         // If we have a backstack, show the back button
         if (getSupportActionBar() != null && mNavController != null) {
 
@@ -278,7 +321,7 @@ public class MainActivity extends BaseActivity implements BaseFragment.FragmentN
         switch (index) {
 
             case FragNavController.TAB1:
-                return DelegationFragment.getInstance();
+                return RequestFragment.getInstance();
             case FragNavController.TAB2:
                 return MyOrdersFragment.getInstance();
             case FragNavController.TAB3:
@@ -286,7 +329,7 @@ public class MainActivity extends BaseActivity implements BaseFragment.FragmentN
             case FragNavController.TAB4:
                 return MyAccountFragment.getInstance();
             default:
-                return DelegationFragment.getInstance();
+                return RequestFragment.getInstance();
         }
     }
 
@@ -301,15 +344,33 @@ public class MainActivity extends BaseActivity implements BaseFragment.FragmentN
             getSupportActionBar().setTitle("");
         toolbarTitle.setText(title);
         Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.content_frame);
+        setProgressAnimate(progressBar, progress);
+        if (currentFragment instanceof BaseDelegate) {
+            progressContainer.setVisibility(View.VISIBLE);
+        } else
+            progressContainer.setVisibility(View.GONE);
+//        if (currentFragment instanceof DeliveryPlaceFragment)
+//            costTv.setVisibility(View.VISIBLE);
+//        else
+//            costTv.setVisibility(View.GONE);
+    }
+
+    public void updateToolbarTitle(String title, int progress, int cost) {
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setTitle("");
+        toolbarTitle.setText(title);
+        Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.content_frame);
         if (currentFragment instanceof BaseDelegate) {
             progressContainer.setVisibility(View.VISIBLE);
             setProgressAnimate(progressBar, progress);
         } else
             progressContainer.setVisibility(View.GONE);
-    }
-
-    private void setProgressMax(ContentLoadingProgressBar pb, int max) {
-        pb.setMax(max * 100);
+//        if (currentFragment instanceof DeliveryPlaceFragment || currentFragment instanceof MapFragment
+//                || currentFragment instanceof PickDateFragment || currentFragment instanceof PickDateForArrivingFragment) {
+//            costTv.setVisibility(View.VISIBLE);
+//            costTv.setText(getString(R.string.ksa_currency) + " " + cost);
+//        } else
+//            costTv.setVisibility(View.GONE);
     }
 
     private void setProgressAnimate(ContentLoadingProgressBar pb, int progressTo) {

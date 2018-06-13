@@ -29,6 +29,73 @@ public class OrderLawyerBody {
     @SerializedName("longitude")
     @Expose
     private double longitude;
+    @SerializedName("address")
+    @Expose
+    private String address;
+    @SerializedName("time")
+    @Expose
+    private String time;
+    @SerializedName("letterDate")
+    @Expose
+    private String letterDate;
+    @SerializedName("letterNumber")
+    @Expose
+    private String letterNumber;
+    @SerializedName("marriageDate")
+    @Expose
+    private String marriageDate;
+    @SerializedName("marriageTime")
+    @Expose
+    private String marriageTime;
+
+
+    public String getMarriageDate() {
+        return marriageDate;
+    }
+
+    public void setMarriageDate(String marriageDate) {
+        this.marriageDate = marriageDate;
+    }
+
+    public String getMarriageTime() {
+        return marriageTime;
+    }
+
+    public void setMarriageTime(String marriageTime) {
+        this.marriageTime = marriageTime;
+    }
+
+    public String getLetterDate() {
+        return letterDate;
+    }
+
+    public void setLetterDate(String letterDate) {
+        this.letterDate = letterDate;
+    }
+
+    public String getLetterNumber() {
+        return letterNumber;
+    }
+
+    public void setLetterNumber(String letterNumber) {
+        this.letterNumber = letterNumber;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     public int getCategoryId() {
         return categoryId;

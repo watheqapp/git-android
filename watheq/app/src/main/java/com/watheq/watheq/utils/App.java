@@ -1,9 +1,11 @@
 package com.watheq.watheq.utils;
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.res.Configuration;
 
+import com.google.firebase.database.FirebaseDatabase;
 import com.watheq.watheq.R;
 
 import java.util.Locale;
@@ -20,6 +22,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         PrefsManager.init(this);
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         Paper.init(this);
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("fonts/DinNextRegular.ttf")
@@ -28,6 +31,13 @@ public class App extends Application {
         );
     }
 
+    private Activity mCurrentActivity = null;
+    public Activity getCurrentActivity(){
+        return mCurrentActivity;
+    }
+    public void setCurrentActivity(Activity mCurrentActivity){
+        this.mCurrentActivity = mCurrentActivity;
+    }
     public static void changeLang(Context context) {
         Locale myLocale;
         if(PrefsManager.getInstance().getLang() != null){

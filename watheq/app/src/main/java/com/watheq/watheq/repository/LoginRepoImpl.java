@@ -4,8 +4,10 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.support.annotation.NonNull;
 
+import com.watheq.watheq.model.BaseModel;
 import com.watheq.watheq.model.LoginBody;
 import com.watheq.watheq.model.LoginModelResponse;
+import com.watheq.watheq.model.RegisterDeviceBody;
 import com.watheq.watheq.network.ApiFactory;
 
 import retrofit2.Call;
@@ -32,5 +34,22 @@ public class LoginRepoImpl implements LoginRepo {
             }
         });
         return loginModel;
+    }
+
+    @Override
+    public LiveData<BaseModel> registerToken(String auth, RegisterDeviceBody registerDeviceBody) {
+        final MutableLiveData<BaseModel> registerModel = new MutableLiveData<>();
+        ApiFactory.createInstance().registerDeviceToken(auth, registerDeviceBody).enqueue(new Callback<BaseModel>() {
+            @Override
+            public void onResponse(Call<BaseModel> call, Response<BaseModel> response) {
+                registerModel.setValue(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<BaseModel> call, Throwable t) {
+
+            }
+        });
+        return registerModel;
     }
 }

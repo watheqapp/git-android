@@ -1,8 +1,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.watheq.watheq.delegation.MapFragment">
 
     <com.google.android.gms.maps.MapView
@@ -11,6 +11,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.watheq.watheq.delegation.MapsActivity" />
+
+    <EditText
+        android:id="@+id/aAuth_phone_num_edt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/_90sdp"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:background="@drawable/rounded_corner"
+        android:imeOptions="actionDone"
+        android:paddingBottom="@dimen/_10sdp"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:hint="@string/place_detail_hint" />
 
     <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
         android:id="@+id/confirm_btn"
@@ -26,6 +42,6 @@
         android:textColor="@android:color/white"
         android:transitionName="simple_activity_transition"
         app:initialCornerAngle="@dimen/_10sdp"
-        app:spinning_bar_color="@android:color/white"/>
+        app:spinning_bar_color="@android:color/white" />
 
 </FrameLayout>

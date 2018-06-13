@@ -80,23 +80,6 @@
             android:paddingStart="@dimen/_5sdp"
             android:paddingTop="@dimen/_15sdp"
             android:textColor="@color/united_blue" />
-
-        <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
-            android:id="@+id/acp_confirm_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_30sdp"
-            android:layout_marginStart="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_25sdp"
-            android:background="@drawable/rounded_corner_blue"
-            android:gravity="center"
-            android:text="@string/complt_prof_scrn_confirm"
-            android:textColor="@android:color/white"
-            app:spinning_bar_color="@android:color/white"
-            app:initialCornerAngle="@dimen/_10sdp"/>
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -108,5 +91,22 @@
             android:text="@string/complt_prof_scrn_privcy_policy"
             android:textColor="@color/taupe_gray"
             android:textSize="14sp" />
+        <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+            android:id="@+id/acp_confirm_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:background="@drawable/rounded_corner_blue"
+            android:gravity="center"
+            android:text="@string/mdtp_done_label"
+            android:textColor="@android:color/white"
+            app:spinning_bar_color="@android:color/white"
+            app:initialCornerAngle="@dimen/_10sdp"/>
+
+
     </LinearLayout>
 </ScrollView>

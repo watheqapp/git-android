@@ -3,30 +3,52 @@ package com.watheq.watheq.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.ArrayList;
-import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Category implements Parcelable{
+import java.util.ArrayList;
 
+public class Category implements Parcelable {
+
+    @SerializedName("id")
+    @Expose
+    private String id;
     @SerializedName("name")
     @Expose
     private String name;
     @SerializedName("cost")
     @Expose
-    private int cost;
+    private String cost;
     @SerializedName("hasSubs")
     @Expose
-    private int hasSubs;
+    private String hasSubs;
     @SerializedName("subs")
     @Expose
     private ArrayList<Sub> subs = null;
 
+    private String deliveryToHomeFees;
+
+    public String getDeliveryToHomeFees() {
+        return deliveryToHomeFees;
+    }
+
+    public void setDeliveryToHomeFees(String deliveryToHomeFees) {
+        this.deliveryToHomeFees = deliveryToHomeFees;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     protected Category(Parcel in) {
+        id = in.readString();
         name = in.readString();
-        cost = in.readInt();
-        hasSubs = in.readInt();
+        cost = in.readString();
+        hasSubs = in.readString();
         disc = in.readString();
     }
 
@@ -62,19 +84,19 @@ public class Category implements Parcelable{
         this.name = name;
     }
 
-    public int getCost() {
+    public String getCost() {
         return cost;
     }
 
-    public void setCost(int cost) {
+    public void setCost(String cost) {
         this.cost = cost;
     }
 
-    public int getHasSubs() {
+    public String getHasSubs() {
         return hasSubs;
     }
 
-    public void setHasSubs(int hasSubs) {
+    public void setHasSubs(String hasSubs) {
         this.hasSubs = hasSubs;
     }
 
@@ -93,9 +115,10 @@ public class Category implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(id);
         parcel.writeString(name);
-        parcel.writeInt(cost);
-        parcel.writeInt(hasSubs);
+        parcel.writeString(cost);
+        parcel.writeString(hasSubs);
         parcel.writeString(disc);
     }
 }

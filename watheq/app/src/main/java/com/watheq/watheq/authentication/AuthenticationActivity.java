@@ -20,11 +20,14 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.watheq.watheq.MainActivity;
 import com.watheq.watheq.R;
 import com.watheq.watheq.base.BaseActivity;
+import com.watheq.watheq.model.BaseModel;
 import com.watheq.watheq.model.LoginBody;
 import com.watheq.watheq.model.LoginModelResponse;
+import com.watheq.watheq.model.RegisterDeviceBody;
 import com.watheq.watheq.utils.AnimationHelper;
 import com.watheq.watheq.utils.UserManager;
 import com.watheq.watheq.utils.Utils;
@@ -47,6 +50,8 @@ public class AuthenticationActivity extends BaseActivity {
     TextView timer;
     @BindView(R.id.aAuth_phone_num_edt)
     EditText phoneNumEdt;
+    @BindView(R.id.msg)
+    TextView msg;
     private AuthViewModel authViewModel;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks calls;
     private FirebaseAuth firebaseAuth;
@@ -66,12 +71,24 @@ public class AuthenticationActivity extends BaseActivity {
         }
     };
 
+    private final Observer<BaseModel> registerDeviceToken = new Observer<BaseModel>() {
+        @Override
+        public void onChanged(@Nullable BaseModel baseModel) {
+            Log.d(TAG, "onChanged: " + baseModel);
+        }
+    };
+
     private final Observer<LoginModelResponse> getLoginResponse = new Observer<LoginModelResponse>() {
         @Override
         public void onChanged(@Nullable LoginModelResponse loginModel) {
             Log.d(TAG, "onChanged: " + loginModel);
             if (loginModel.getThrowable() == null && loginModel.getCode() == 200) {
                 UserManager.getInstance().addUser(loginModel);
+
+                RegisterDeviceBody registerDeviceBody = new RegisterDeviceBody(Utils.getDeviceID(AuthenticationActivity.this)
+                        , FirebaseInstanceId.getInstance().getToken());
+                authViewModel.registerDeviceToken(loginModel.getResponse().getToken()
+                        , registerDeviceBody).observe(AuthenticationActivity.this, registerDeviceToken);
                 completeProfileOrHome(loginModel.getResponse().getIsCompleteProfile());
             } else if (loginModel.getThrowable() == null) {
                 showError(loginModel.getMessage());
@@ -114,6 +131,7 @@ public class AuthenticationActivity extends BaseActivity {
         authViewModel.getApiResponse().observe(this, getLoginResponse);
         firebaseAuth = FirebaseAuth.getInstance();
         calls = authCallBack();
+        FirebaseInstanceId.getInstance().getToken();
     }
 
     @OnClick(R.id.aAuth_confirm_btn)
@@ -173,8 +191,8 @@ public class AuthenticationActivity extends BaseActivity {
         timer.setText(Utils.timerTextFormat(value));
     }
 
-    private void verifyPhoneNumber(String number, View view) {
-        PhoneAuthProvider.getInstance().verifyPhoneNumber("+2" + number,
+    private void verifyPhoneNumber(String number, View view) {//+966
+        PhoneAuthProvider.getInstance().verifyPhoneNumber("+966" + number,
                 60, TimeUnit.SECONDS, this, calls);
         Validations.disableViews(view);
     }
@@ -206,6 +224,7 @@ public class AuthenticationActivity extends BaseActivity {
                 Log.d(TAG, "onCodeSent: " + verificationId);
                 AuthenticationActivity.this.verificationId = verificationId;
                 AnimationHelper.animateFadeIn(AuthenticationActivity.this, verificationEdt);
+                msg.setText(getText(R.string.logn_scrn_confirm));
                 AnimationHelper.animateFadeIn(AuthenticationActivity.this, timer);
                 authViewModel.setIntervalTime(120000);
                 verificationEdt.postDelayed(new Runnable() {

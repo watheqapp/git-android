@@ -7,5 +7,6 @@ package com.watheq.watheq.utils;
 public enum Errors {
     UNAUTHORIZE,
     NO_INTERNET,
-    SERVER_ERROR
+    SERVER_ERROR,
+    TOKEN_EXPIRE
 }

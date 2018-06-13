@@ -13,6 +13,62 @@ public class ClientInfoModel implements Parcelable {
     private String representativeName;
     private String clientNationalID;
     private int id;
+    private int cost;
+    private int deliveryToHomeFees;
+    private String title;
+    private boolean isAuth;
+    private String deliveryPlace;
+
+    public String getDeliveryPlace() {
+        return deliveryPlace;
+    }
+
+    public void setDeliveryPlace(String deliveryPlace) {
+        this.deliveryPlace = deliveryPlace;
+    }
+
+    public boolean isAuth() {
+        return isAuth;
+    }
+
+    public void setAuth(boolean auth) {
+        isAuth = auth;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    private boolean isHasNoSubs;
+
+    public boolean isHasNoSubs() {
+        return isHasNoSubs;
+    }
+
+    public void setHasNoSubs(boolean hasNoSubs) {
+        isHasNoSubs = hasNoSubs;
+    }
+
+
+    public int getDeliveryToHomeFees() {
+        return deliveryToHomeFees;
+    }
+
+    public void setDeliveryToHomeFees(int deliveryToHomeFees) {
+        this.deliveryToHomeFees = deliveryToHomeFees;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
 
     public String getRepresentativeName() {
         return representativeName;

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.thefinestartist.finestwebview.FinestWebView;
 import com.watheq.watheq.MainActivity;
 import com.watheq.watheq.R;
 import com.watheq.watheq.authentication.AuthenticationActivity;
@@ -18,6 +19,7 @@ import com.watheq.watheq.base.BaseFragment;
 import com.watheq.watheq.utils.App;
 import com.watheq.watheq.utils.PrefsManager;
 import com.watheq.watheq.utils.UserManager;
+import com.watheq.watheq.views.LogoutDialog;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -28,7 +30,7 @@ import static android.support.design.widget.BottomSheetBehavior.STATE_HIDDEN;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SettingFragment extends BaseFragment {
+public class SettingFragment extends BaseFragment implements LogoutDialog.OnOkClicked {
 
     BottomSheetBehavior bottomSheetBehavior;
     @BindView(R.id.bottom_sheet)
@@ -44,6 +46,16 @@ public class SettingFragment extends BaseFragment {
     @Override
     public int getLayoutResource() {
         return R.layout.fragment_setting;
+    }
+
+    @OnClick(R.id.terms)
+    void onTermsClicked() {
+        new FinestWebView.Builder(getActivity()).show("http://159.89.41.54/watheq/public/terms");//http://159.89.41.54/watheq/public/policy
+    }
+
+    @OnClick(R.id.policy)
+    void onPolicyClicked() {
+        new FinestWebView.Builder(getActivity()).show("http://159.89.41.54/watheq/public/policy");//http://159.89.41.54/watheq/public/policy
     }
 
     @Override
@@ -69,12 +81,17 @@ public class SettingFragment extends BaseFragment {
         });
     }
 
+    @OnClick(R.id.report_problem)
+    void onReportClicked() {
+        Intent intent = new Intent(getActivity(), ReportProblemActivity.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.logout)
     void onLogoutClicked() {
-        UserManager.getInstance().logout();
-        AuthenticationActivity.start(getContext());
-        if (getActivity() != null)
-            getActivity().finish();
+        LogoutDialog logoutDialog = new LogoutDialog(getActivity(), this);
+        logoutDialog.show();
+
     }
 
     @OnClick(R.id.change_lang)
@@ -126,5 +143,13 @@ public class SettingFragment extends BaseFragment {
             }
         }, 200);
 
+    }
+
+    @Override
+    public void onOkClicked() {
+        UserManager.getInstance().logout();
+        AuthenticationActivity.start(getContext());
+        if (getActivity() != null)
+            getActivity().finish();
     }
 }

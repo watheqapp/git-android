@@ -22,4 +22,18 @@
         <item name="android:minHeight">10dip</item>
         <item name="android:maxHeight">20dip</item>
     </style>
+
+
+    <style name="SendFabTheme" parent="AppTheme">
+        <item name="colorAccent">@android:color/white</item>
+    </style>
+
+
+    <style name="ratingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/rating_full</item>
+        <item name="android:minHeight">40dip</item>
+        <item name="android:maxHeight">40dip</item>
+        <item name="android:numStars">5</item>
+    </style>
+
 </resources>

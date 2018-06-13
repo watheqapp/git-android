@@ -3,15 +3,49 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="united_blue">#ff4a90e2</color>
+    <color name="united_blue">#08C575</color>
     <color name="taupe_gray">#ff929292</color>
     <color name="manatee">#ff969ba9</color>
     <color name="white_smoke">#fff4f5f9</color>
     <color name="shimmer_color_">#ffffff</color>
-    <color name="rose_madder">#ffda2138</color>
+    <color name="rose_madder">#fff1c250</color>
     <color name="pastel_blue">#ffafb6c8</color>
     <color name="snakbar_background">#B33f3f3f</color>
     <color name="schedule_un_selected_day">#FFC7C7C7</color>
     <color name="ghost_white">#fff5f8fc</color>
     <color name="mdtp_transparent_black">#7f000000</color>
+    <color name="cerise_pink">#fff1c250</color>
+    <color name="dark_gray">#ffa1a1a1</color>
+    <color name="pastel_orange">#fff1c250</color>
+    <color name="platinum">#ffe0e0e0</color>
+
+
+
+
+    ///// not need
+
+    <!--system colors-->
+    <color name="colorAccentPressed">#eaa60c</color>
+    <color name="colorAccentIcons">#edb537</color>
+
+    <!--text colors-->
+    <color name="colorTextPrimary">#D9FFFFFF</color>
+    <color name="colorTextPrimaryHighlighted">#F2FFFFFF</color>
+    <color name="colorTextSecondary">#8CFFFFFF</color>
+
+    <!--basic colors-->
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorEmptyStates">#40ffffff</color>
+    <color name="colorGrey">#BDBDBD</color>
+    <color name="colorRed">#F44336</color>
+    <color name="colorPink">#de7172</color>
+
+    <!--theme colors-->
+    <color name="colorShadow">#41000000</color>
+    <color name="colorBackground">#2b2b2b</color>
+    <color name="colorForeground">#3A3A3A</color>
+    <!--fab colors-->
+
 </resources>

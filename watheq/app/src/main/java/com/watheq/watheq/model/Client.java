@@ -13,7 +13,7 @@ public class Client {
     private String name;
     @SerializedName("phone")
     @Expose
-    private String phone;
+    private long phone;
     @SerializedName("lat")
     @Expose
     private double lat;
@@ -37,11 +37,11 @@ public class Client {
         this.name = name;
     }
 
-    public String getPhone() {
+    public long getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(long phone) {
         this.phone = phone;
     }
 

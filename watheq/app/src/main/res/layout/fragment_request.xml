@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_smoke"
+    tools:context="com.watheq.watheq.myOrder.MyOrdersFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/pastel_blue" />
+
+    <LinearLayout
+        android:id="@+id/tabs_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/closed_orders"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:padding="@dimen/_3sdp"
+            android:text="@string/agency"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/opened_orders"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:padding="@dimen/_3sdp"
+            android:text="@string/contract"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/new_orders"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:background="@drawable/red_rounded_corner"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:padding="@dimen/_3sdp"
+            android:text="@string/marriage"
+            android:textColor="@android:color/white" />
+
+
+    </LinearLayout>
+
+
+    <com.watheq.watheq.views.NonSwipeableViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tabs_holder"
+        android:visibility="gone" />
+
+    <com.watheq.watheq.views.EmptyView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:indicatorColor="@color/united_blue"
+        app:indicatorName="BallClipRotatePulseIndicator" />
+</RelativeLayout>

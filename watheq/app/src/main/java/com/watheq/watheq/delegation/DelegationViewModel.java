@@ -24,7 +24,7 @@ public class DelegationViewModel extends ViewModel {
         deMediatorLiveData = new MediatorLiveData<>();
     }
 
-    LiveData<MainCategoriesResponse> getCategories(String auth,BaseHandlingErrors error) {
+    public LiveData<MainCategoriesResponse> getCategories(String auth,BaseHandlingErrors error) {
         if (deMediatorLiveData.getValue() != null)
             deMediatorLiveData.postValue(deMediatorLiveData.getValue());
         else

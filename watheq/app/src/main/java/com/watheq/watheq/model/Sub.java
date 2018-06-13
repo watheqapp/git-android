@@ -31,6 +31,26 @@ public class Sub implements Parcelable {
     @Expose
     private String disc;
 
+    private int deliveryToHomeFees;
+
+    private boolean isHasNoSubs;
+
+    public boolean isHasNoSubs() {
+        return isHasNoSubs;
+    }
+
+    public void setHasNoSubs(boolean hasNoSubs) {
+        isHasNoSubs = hasNoSubs;
+    }
+
+    public int getDeliveryToHomeFees() {
+        return deliveryToHomeFees;
+    }
+
+    public void setDeliveryToHomeFees(int deliveryToHomeFees) {
+        this.deliveryToHomeFees = deliveryToHomeFees;
+    }
+
     public int getId() {
         return id;
     }
@@ -46,6 +66,7 @@ public class Sub implements Parcelable {
         hasSubs = in.readInt();
         subs = in.createTypedArrayList(Sub.CREATOR);
         disc = in.readString();
+        deliveryToHomeFees = in.readInt();
     }
 
     public static final Creator<Sub> CREATOR = new Creator<Sub>() {
@@ -113,5 +134,6 @@ public class Sub implements Parcelable {
         parcel.writeInt(hasSubs);
         parcel.writeTypedList(subs);
         parcel.writeString(disc);
+        parcel.writeInt(deliveryToHomeFees);
     }
 }

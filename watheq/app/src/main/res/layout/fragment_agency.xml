@@ -1,0 +1,434 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_smoke"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context="com.watheq.watheq.delegation.delegationNew.AgencyFragment">
+
+
+        <!--<TextView-->
+            <!--android:id="@+id/description"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="@dimen/_10sdp"-->
+            <!--android:gravity="center"-->
+            <!--android:textColor="@color/taupe_gray"-->
+            <!--android:textSize="14sp" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/create_agency"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:background="@drawable/category_selected_background"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/create_agency"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/cancel_agency"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/category_background"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/cancel_agency"
+                android:textColor="@color/dark_gray" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/agency_kind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/category_background"
+            android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
+            android:drawablePadding="@dimen/_5sdp"
+            android:drawableStart="@drawable/ic_person_black_24dp"
+            android:gravity="start|center"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/againt_kind"
+            android:textColor="@color/dark_gray" />
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="@dimen/_5sdp"-->
+        <!--android:layout_marginTop="@dimen/_5sdp"-->
+        <!--android:gravity="center"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<View-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="0.25dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@color/pastel_blue" />-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginEnd="@dimen/_5sdp"-->
+        <!--android:layout_marginStart="@dimen/_5sdp"-->
+        <!--android:text="@string/client_info"-->
+        <!--android:textColor="@color/united_blue"-->
+        <!--android:textSize="12sp"-->
+        <!--android:textStyle="bold" />-->
+
+        <!--<View-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="0.25dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@color/pastel_blue" />-->
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="@dimen/_10sdp"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/name"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@drawable/edit_text_rounded"-->
+        <!--android:gravity="start|center"-->
+        <!--android:hint="@string/name"-->
+        <!--android:padding="@dimen/_5sdp"-->
+        <!--android:textColor="@color/united_blue" />-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/civil_registry"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="@dimen/_10sdp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@drawable/edit_text_rounded"-->
+        <!--android:gravity="start|center"-->
+        <!--android:hint="@string/civil_registry"-->
+        <!--android:padding="@dimen/_5sdp"-->
+        <!--android:inputType="number"-->
+        <!--android:textColor="@color/united_blue" />-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="@dimen/_5sdp"-->
+        <!--android:layout_marginTop="@dimen/_5sdp"-->
+        <!--android:gravity="center"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<View-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="0.25dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@color/pastel_blue" />-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginEnd="@dimen/_5sdp"-->
+        <!--android:layout_marginStart="@dimen/_5sdp"-->
+        <!--android:text="@string/auth_for"-->
+        <!--android:textColor="@color/united_blue"-->
+        <!--android:textSize="12sp"-->
+        <!--android:textStyle="bold" />-->
+
+        <!--<View-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="0.25dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@color/pastel_blue" />-->
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="@dimen/_10sdp"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/agency_name"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@drawable/edit_text_rounded"-->
+        <!--android:gravity="start|center"-->
+        <!--android:hint="@string/name"-->
+        <!--android:padding="@dimen/_5sdp"-->
+        <!--android:textColor="@color/united_blue" />-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/agency_civil_registry"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="@dimen/_10sdp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@drawable/edit_text_rounded"-->
+        <!--android:gravity="start|center"-->
+        <!--android:hint="@string/civil_registry"-->
+        <!--android:textColor="@color/united_blue"-->
+        <!--android:inputType="number"-->
+        <!--android:padding="@dimen/_5sdp" />-->
+        <!--</LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0.25dp"
+                android:layout_weight="1"
+                android:background="@color/pastel_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@string/delivery_location"
+                android:textColor="@color/united_blue"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0.25dp"
+                android:layout_weight="1"
+                android:background="@color/pastel_blue" />
+
+        </LinearLayout>
+
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="@dimen/_10sdp"-->
+        <!--android:background="@drawable/category_background"-->
+        <!--android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"-->
+        <!--android:drawablePadding="@dimen/_5sdp"-->
+        <!--android:drawableStart="@drawable/ic_add_location_black_24dp"-->
+        <!--android:gravity="start|center"-->
+        <!--android:padding="@dimen/_5sdp"-->
+        <!--android:textColor="@color/dark_gray"-->
+        <!--android:text="@string/choose_loc" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/office"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:background="@drawable/category_background"
+                android:drawableStart="@drawable/ic_add_location_black_24dp"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/office"
+                android:textColor="@color/dark_gray" />
+
+            <TextView
+                android:id="@+id/home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/category_background"
+                android:drawableStart="@drawable/ic_add_location_black_24dp"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/home"
+                android:textColor="@color/dark_gray" />
+        </LinearLayout>
+
+        <!--<TextView-->
+        <!--android:id="@+id/go_to_map"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="@dimen/_10sdp"-->
+        <!--android:background="@drawable/category_background"-->
+        <!--android:drawablePadding="@dimen/_5sdp"-->
+        <!--android:drawableStart="@drawable/ic_add_location_black_24dp"-->
+        <!--android:gravity="start|center"-->
+        <!--android:padding="@dimen/_5sdp"-->
+        <!--android:text="@string/choose_loc"-->
+        <!--android:textColor="@color/dark_gray" />-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/address_details"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="@dimen/_10sdp"-->
+        <!--android:layout_marginEnd="@dimen/_10sdp"-->
+        <!--android:layout_marginStart="@dimen/_10sdp"-->
+        <!--android:layout_marginTop="@dimen/_5sdp"-->
+        <!--android:background="@drawable/edit_text_rounded"-->
+        <!--android:hint="@string/place_detail_hint"-->
+        <!--android:textColor="@color/united_blue"-->
+        <!--android:padding="@dimen/_5sdp" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0.25dp"
+                android:layout_weight="1"
+                android:background="@color/pastel_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@string/dating_time"
+                android:textColor="@color/united_blue"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0.25dp"
+                android:layout_weight="1"
+                android:background="@color/pastel_blue" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/one_hour"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:background="@drawable/category_background"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/one_hour"
+                android:textColor="@color/dark_gray" />
+
+            <TextView
+                android:id="@+id/two_hours"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/category_background"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/two_hours"
+                android:textColor="@color/dark_gray" />
+
+            <TextView
+                android:id="@+id/three_hours"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:background="@drawable/category_background"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/three_hours"
+                android:textColor="@color/dark_gray" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/later_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/category_background"
+            android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
+            android:drawablePadding="@dimen/_5sdp"
+            android:drawableStart="@drawable/ic_access_time_black_24dp"
+            android:gravity="start|center"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/another_time"
+            android:textColor="@color/dark_gray" />
+
+        <TextView
+            android:id="@+id/arrival_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/category_background"
+            android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
+            android:drawablePadding="@dimen/_5sdp"
+            android:drawableStart="@drawable/ic_access_time_black_24dp"
+            android:gravity="start|center"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/arrived_time"
+            android:textColor="@color/dark_gray" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+                android:id="@+id/next_step"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/rounded_corner_blue"
+                android:gravity="center"
+                android:text="@string/send_request"
+                android:textColor="@android:color/white"
+                app:initialCornerAngle="@dimen/_10sdp"
+                app:spinning_bar_color="@android:color/white" />
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

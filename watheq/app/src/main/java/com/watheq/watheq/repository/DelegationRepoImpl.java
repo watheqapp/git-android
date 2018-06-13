@@ -27,13 +27,16 @@ public class DelegationRepoImpl implements DelegationRepo {
         ApiFactory.createInstance().getCategories(auth).enqueue(new Callback<MainCategoriesResponse>() {
             @Override
             public void onResponse(@NonNull Call<MainCategoriesResponse> call, @NonNull Response<MainCategoriesResponse> response) {
-                if (response.body() != null && response.code() == 200)
+                if (response.body() != null && response.body().getCode() == 200)
                     mutableLiveData.setValue(response.body());
                 else {
-                    if (baseHandlingErrors != null) {
-                        baseHandlingErrors.onResponseFail(NetworkFactory.getErrors(response.code()));
-                    } else
-                        throw new RuntimeException("you have to intiListener before calling the api");
+                    if (baseHandlingErrors != null && response.body() != null) {
+                        baseHandlingErrors.onResponseFail(NetworkFactory.getErrors(response.body().getCode()));
+                    }else {
+                        baseHandlingErrors.onResponseFail(NetworkFactory.getErrors(401));
+                    }
+//                    else
+//                        throw new RuntimeException("you have to intiListener before calling the api");
                 }
             }
 

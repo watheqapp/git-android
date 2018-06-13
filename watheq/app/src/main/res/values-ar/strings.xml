@@ -1,67 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Watheq</string>
+    <string name="app_name">وثق</string>
     <string name="font_bold">fonts/DinNextMedium.ttf</string>
-    <string name="logn_scrn_lable">تسجيل دخول</string>
-    <string name="logn_scrn_msg">ادخل رقم جوالك ثم كود التحقق من الرساله التي ستصلك على هذا الرقم</string>
+    <string name="logn_scrn_lable">التسجيل</string>
+    <string name="logn_scrn_msg">ادخل رقم الجوال</string>
     <string name="logn_scrn_are_u_lawyer">هل أنت موثق ؟</string>
     <string name="logn_scrn_download_app">حمل تطبيق الموثقين من هنا</string>
-    <string name="logn_scrn_confirm_num">أكد الرقم</string>
-    <string name="logn_scrn_confirm">أكد الرقم </string>
-    <string name="logn_scrn_resend">اعادة ارسال الكود</string>
+    <string name="logn_scrn_confirm_num">تم</string>
+    <string name="logn_scrn_confirm">ادخل الرمز المرسل لجوالك</string>
+    <string name="logn_scrn_resend">إعادة إرسال رمز التحقق</string>
     <string name="complt_prof_scrn_welcome">مرحبا</string>
-    <string name="complt_prof_scrn_msg">نحتاج لاضافة بعض البيانات لتظهر في ملفك الشخصي</string>
+    <string name="complt_prof_scrn_msg">تحتاج لاضافة بعض البيانات لتظهر في ملفك الشخصي</string>
     <string name="complt_prof_scrn_username_hint">اسم المستخدم</string>
-    <string name="complt_prof_scrn_email_hint">الايميل</string>
+    <string name="complt_prof_scrn_email_hint">البريد الإلكتروني</string>
     <string name="complt_prof_scrn_confirm">تأكيد</string>
     <string name="complt_prof_scrn_privcy_policy">موافق على كافة الأحكام والشروط</string>
-    <string name="validation_error_required">املأ الحقول الاجباريه أولاً</string>
+    <string name="validation_error_required">يرجى ملء جميع الحقولً</string>
     <string name="validation_error_email">ادخل بريد الكتروني صحيح</string>
     <string name="permission_external_storage_rationale">External Storage Permission</string>
     <string name="allow">السماح</string>
     <string name="deny">حظر</string>
-    <string name="logn_scrn_phone_empty">من فضلك ادخل رقم الهاتف</string>
-    <string name="logn_scrn_verfe_empty">من فضلك ادخل كود التحقق</string>
+    <string name="logn_scrn_phone_empty">ادخل رقم الهاتف</string>
+    <string name="logn_scrn_verfe_empty">ادخل كود التحقق</string>
     <string name="all_no_internet">يبدو انك تواجه مشكله بالاتصال بالانترنت الان</string>
-    <string name="invalid_code">كود خاطئ, من فضلك استخدم الكود الصحيح او اعد الارسال</string>
-    <string name="logn_scrn_incorrect_number">من فضلك ادخل رقم هاتف سعودي صحيح</string>
+    <string name="invalid_code">أدخل رقم تحقق صحيح</string>
+    <string name="logn_scrn_incorrect_number">أدخل رقم هاتف صحيح</string>
     <string name="currpted_file">ملف تالف</string>
     <string name="file_size">حجم الملف يجب ان لا يتعدي 1 ميجا</string>
-    <string name="no_internet">لا يوجد اتصال بالإنترنت</string>
+    <string name="no_internet">لا يوجد إتصال بالإنترنت</string>
     <string name="wathaq">وثق</string>
-    <string name="lang">اللغة</string>
-    <string name="credit">الائتمان</string>
-    <string name="oprations">عملياتك</string>
+    <string name="lang">تغيير اللغة</string>
+    <string name="credit">بطاقة الإئتمان</string>
     <string name="report_problem">بلغ عن مشكلة</string>
     <string name="logout">تسجيل خروج</string>
     <string name="privacy">الشروط والأحكام</string>
     <string name="help">المساعدة</string>
     <string name="policy">سياسة الخصوصية</string>
-    <string name="setting">الاعدادات</string>
+    <string name="setting">الإعدادات</string>
     <string name="arabic">العربيه</string>
     <string name="english">English</string>
     <string name="something_wrong">هناك خطأ ما</string>
-    <string name="auth_kind">صفة الموكل</string>
-    <string name="name">الأسم</string>
-    <string name="civil_registry">السجل المدني</string>
-    <string name="commercial_register">(السجل التجاري في حالة الشركات)</string>
+    <string name="name"><font size="12">الاسم</font></string>
+    <string name="civil_registry"><font size="12">رقم الهوية</font></string>
     <string name="next_step">الخطوة التالية</string>
-    <string name="add_another_client">اضافة موكل اخر</string>
-    <string name="you_can_add_another_client">بامكانك اضافة اكثر من موكل بالضغط على العلامة في الاسفل</string>
-    <string name="auth_for">الموكل له</string>
-    <string name="permission_location">Location</string>
+    <string name="chat_msg">مرحبا. هنا صفحة حوارك مع</string>
+    <string name="finish">الغاء</string>
+    <string name="yes">نعم</string>
+    <string name="logout_msg">هل انت متأكد من تسجيل الخروج؟</string>
+    <string name="permission_location">الموقع</string>
     <string name="choose_loc">اختيار العنوان</string>
-    <string name="choose_location_msg">من فضلك اختار مكان التسليم</string>
-    <string name="office">مكتب</string>
-    <string name="home">سكنك</string>
+    <string name="choose_location_msg">الرجاء اختيار موقع التسليم</string>
+    <string name="ksa_currency">رس</string>
+    <string name="office">مقر الموثق</string>
+    <string name="home">مقرك</string>
+    <string name="service_num_holder">رقم الطلب</string>
+    <string name="my_orders">طلباتي</string>
+    <string name="no_closed_orders">لا يوجد طلبات</string>
+    <string name="no_opened_orders">لا يوجد طلبات</string>
+    <string name="opened_orders">مفتوحة</string>
+    <string name="closed_orders">منتهية</string>
+    <string name="no_new_orders">لا يوجد طلبات</string>
+    <string name="authorized_place">مقر المأذون</string>
+    <string name="client_place">مقرك</string>
+    <string name="complete_order">أكمل الطلب</string>
+    <string name="searching">قيد البحث</string>
+    <string name="searching_msg">لم يتوفر موثق قريب منك, قد يتوفر ذىل إذا تم زيادة مدة الطلب عن ٣ ساعات, أو يمكنك اختيار موثق بنفسك</string>
+    <string name="choose_lawyer">اختر موثقا معيناً</string>
+    <string name="search">بحث</string>
+    <string name="new_order">طلب جديد</string>
+    <string name="letter_num"><font size="12">رقم الخطاب</font></string>
+    <string name="date">تاريخ الخطاب</string>
+    <string name="call_me">اتصل بي لأتمام الطلب</string>
     <array name="tab_name">
         <item>وثق</item>
         <item>طلباتي</item>
-        <item>تنبيهات</item>
+        <item>التنبيهات</item>
         <item>ملفي الشخصي</item>
     </array>
+
+    <string name="dating_place">مقر الحضور</string>
 
     <string name="service">خدمة</string>
     <string name="consalt">استشارة</string>
     <string name="client_info">بيانات الموكِل</string>
+    <string name="new_orders">جديدة</string>
+    <string name="place_detail_hint"><font size="12">أكتب تفاصيل العنوان</font></string>
+    <string name="arrived_time">وقت الحضور</string>
+    <string name="arrived_date">تاريخ الحضور</string>
+    <string name="request_num">طلبك رقم #</string>
+    <string name="one_hour">ساعة</string>
+    <string name="two_hours">ساعتان</string>
+    <string name="three_hours">ثلاث ساعات</string>
+    <string name="will_go_to_at">سأتجه الي مكتب الموثق خلال ...</string>
+    <string name="will_come_at">اطلب حضور الموثق خلال ...</string>
+    <string name="order_maazon_around">اطلب حضور المأذون في الوقت ...</string>
+    <string name="go_to_maazon_around">سـأحضور للمأذون في الوقت ...</string>
+    <string name="another_time">تاريخ لاحق</string>
+    <string name="authenticate">مراسله</string>
+    <string name="choose_laywer">اختر موثقا معينا</string>
+    <string name="no_lawyers">لا يوجد محامين</string>
+    <string name="no_notification">لا يوجد تنبيهات</string>
+    <string name="notification">التنبيهات</string>
+    <string name="title_activity_maps">الخريطة</string>
+    /// not need
+
+    <string name="placeholder">Placeholder</string>
+
+    <string name="hint_message">أكتب رسالتك...</string>
+    <string name="error_loading_user">Couldn\'t load user</string>
+    <string name="today">Today</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="empty_view_thread">أرسل اول رسالة!</string>
+
+    <string name="message_message_copied">Copied to clipboard</string>
+    <string name="clipboard_title_copied_message">Copied message</string>
+    <string name="send">ارسال</string>
+    <string name="create_agency">إصدار وكالة</string>
+    <string name="cancel_agency">فسخ وكالة</string>
+    <string name="againt_kind">صفة الموكل</string>
+    <string name="delivery_location">استلام الوكاله</string>
+    <string name="dating_time">أطلب موعد المقابلة خلال</string>
+    <string name="agency">وكالات</string>
+    <string name="contract">عقود الشركات</string>
+    <string name="marriage">نكاح</string>
+    <string name="send_request">ارسال الطلب</string>
+    <string name="sign_contract">تصديق عقود تأسيس الشركات</string>
+    <string name="not_needed">تعديل عقود الشركات</string>
+    <string name="search_lawyer">اختار محامي</string>
+
+    <string name="personly">فرد</string>
+    <string name="orgnization">مؤسسة</string>
+    <string name="company">شركة</string>
+    <string name="location_has_been_updated">تم اختيار العنوان</string>
+    <string name="rate">قيّم الخدمة</string>
+    <string name="message">الرسالة</string>
+    <string name="msg_title">عنوان الرسالة</string>
+    <string name="call_us">اتصل بنا</string>
+    <string name="your_request_submited">تم استلام رسالتك</string>
+    <string name="min_length">عدد الاحرف يجب ان لا يقل عن ۳ احرف</string>
+    <string name="cancel">إلغاء</string>
 </resources>

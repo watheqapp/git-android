@@ -2,8 +2,11 @@ package com.watheq.watheq.utils;
 
 import android.support.annotation.Nullable;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.watheq.watheq.cache.UserCache;
 import com.watheq.watheq.model.LoginModelResponse;
+
+import java.io.IOException;
 
 /**
  * Created by mahmoud.diab on 11/25/2017.
@@ -40,6 +43,17 @@ public class UserManager {
         } catch (Throwable e) {
             e.printStackTrace();
         }
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    FirebaseInstanceId.getInstance().deleteInstanceId();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
 
         currentUser = null;
 

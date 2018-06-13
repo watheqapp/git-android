@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_top"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_8sdp"
+        android:gravity="center"
+        android:text="@string/againt_kind"
+        android:textColor="@color/united_blue"
+        android:textSize="@dimen/_15sdp" />
+
+
+    <RadioGroup
+        android:id="@+id/filterGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16sdp"
+        android:orientation="vertical">
+
+
+        <RadioButton
+            android:id="@+id/personally"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_8sdp"
+            android:text="@string/personly"
+            android:textColor="#FF676767"
+            android:textSize="@dimen/_14sdp" />
+
+
+        <RadioButton
+            android:id="@+id/orgnization"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_8sdp"
+            android:text="@string/orgnization"
+            android:textColor="#FF676767"
+            android:textSize="@dimen/_14sdp" />
+
+
+        <RadioButton
+            android:id="@+id/company"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_8sdp"
+            android:text="@string/company"
+            android:textColor="#FF676767"
+            android:textSize="@dimen/_14sdp" />
+
+    </RadioGroup>
+
+
+    <LinearLayout
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/_32sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/select"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="@string/mdtp_ok"
+            android:textColor="@color/united_blue"
+            android:textSize="@dimen/_15sdp" />
+
+
+        <Button
+            android:id="@+id/cancel"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="@string/mdtp_cancel"
+            android:textColor="#FFB5B5B5"
+            android:textSize="@dimen/_15sdp" />
+
+    </LinearLayout>
+</LinearLayout>

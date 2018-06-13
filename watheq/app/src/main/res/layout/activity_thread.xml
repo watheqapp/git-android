@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar_main"
+            layout="@layout/toolbar" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/ghost_white" />
+
+        <LinearLayout
+            android:id="@+id/rate_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="horizontal"
+            android:padding="@dimen/_5sdp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:gravity="center|start"
+                android:text="@string/rate"
+                android:textColor="@color/united_blue"
+                android:textStyle="bold" />
+
+            <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                android:id="@+id/rating_bar"
+                style="@style/Widget.MaterialRatingBar.RatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:minHeight="@dimen/_20sdp"
+                android:stepSize="1"
+                app:mrb_fillBackgroundStars="true"
+                app:mrb_progressTint="@color/united_blue" />
+
+
+        </LinearLayout>
+
+        <!--<TextView-->
+            <!--android:id="@+id/finish_order"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:padding="@dimen/_10sdp"-->
+            <!--android:text="@string/closed_order"-->
+            <!--android:textColor="@color/rose_madder"-->
+            <!--android:visibility="gone" />-->
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
+
+
+        <com.watheq.watheq.views.EmptyStateRecyclerView
+            android:id="@+id/activity_thread_messages_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/activity_thread_editor_parent"
+            android:background="@color/white_smoke"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/_8sdp"
+            tools:listitem="@layout/item_message_sent" />
+
+        <TextView
+            android:id="@+id/activity_thread_empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawablePadding="@dimen/_16sdp"
+            android:drawableTop="@drawable/orders_empty_"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:id="@+id/activity_thread_editor_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white_smoke"
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
+            android:padding="@dimen/_4sdp">
+
+            <EditText
+                android:id="@+id/activity_thread_input_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/chip_chat"
+                android:hint="@string/hint_message"
+                android:paddingBottom="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/activity_thread_send_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/send_bc"
+                android:paddingBottom="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:text="@string/send"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+            <!--<android.support.design.widget.FloatingActionButton-->
+            <!--android:id="@+id/activity_thread_send_fab"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_margin="@dimen/simple_padding_small"-->
+            <!--android:clickable="true"-->
+            <!--android:src="@drawable/ic_send"-->
+            <!--android:theme="@style/SendFabTheme"-->
+            <!--app:elevation="0dp"-->
+            <!--app:fabSize="mini" />-->
+
+            <!--<ProgressBar-->
+            <!--android:id="@+id/activity_thread_progress"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentEnd="true" />-->
+
+
+        </LinearLayout>
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/simple_padding_small"-->
+        <!--android:layout_above="@+id/activity_thread_editor_parent"-->
+        <!--android:background="@drawable/tab_bar_shadow" />-->
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -25,10 +25,8 @@ public class OrderLawyerViewModel extends ViewModel {
         deMediatorLiveData = new MediatorLiveData<>();
     }
 
-    LiveData<OrderLawyerResponse> orderLawyer(String auth, OrderLawyerBody orderLawyerBody, BaseHandlingErrors error) {
-        if (deMediatorLiveData.getValue() != null)
-            deMediatorLiveData.postValue(deMediatorLiveData.getValue());
-        else
+    public LiveData<OrderLawyerResponse> orderLawyer(String auth, OrderLawyerBody orderLawyerBody, BaseHandlingErrors error) {
+
             deMediatorLiveData.addSource(orderLawyerRepo.orderLiveResponse(auth,orderLawyerBody, error), new Observer<OrderLawyerResponse>() {
                 @Override
                 public void onChanged(@Nullable OrderLawyerResponse orderLawyerResponse) {

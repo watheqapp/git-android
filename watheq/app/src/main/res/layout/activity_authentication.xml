@@ -22,6 +22,7 @@
             android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/msg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -46,11 +47,11 @@
                 android:layout_marginEnd="@dimen/_30sdp"
                 android:layout_marginStart="@dimen/_30sdp"
                 android:background="@drawable/rounded_corner"
-                android:hint="05058858888xx"
+                android:hint="50588xxxx"
                 android:inputType="phone"
                 android:gravity="left"
                 android:paddingBottom="@dimen/_15sdp"
-                android:paddingLeft="@dimen/_35sdp"
+                android:paddingLeft="@dimen/_45sdp"
                 android:paddingRight="@dimen/_35sdp"
                 android:paddingTop="@dimen/_15sdp" />
 
@@ -58,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|left"
-                android:layout_marginLeft="@dimen/_35sdp"
+                android:layout_marginLeft="@dimen/_45sdp"
                 android:src="@drawable/ic_saudi_arabia" />
         </FrameLayout>
 
@@ -128,23 +129,23 @@
             app:initialCornerAngle="@dimen/_10sdp"
             app:spinning_bar_color="@android:color/white"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:text="@string/logn_scrn_are_u_lawyer"
-            android:textColor="@color/manatee"
-            android:textSize="14sp" />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginTop="@dimen/_20sdp"-->
+            <!--android:text="@string/logn_scrn_are_u_lawyer"-->
+            <!--android:textColor="@color/manatee"-->
+            <!--android:textSize="14sp" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:text="@string/logn_scrn_download_app"
-            android:textColor="@color/united_blue"
-            android:textSize="14sp" />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginBottom="@dimen/_20sdp"-->
+            <!--android:layout_marginTop="@dimen/_20sdp"-->
+            <!--android:text="@string/logn_scrn_download_app"-->
+            <!--android:textColor="@color/united_blue"-->
+            <!--android:textSize="14sp" />-->
     </LinearLayout>
 </ScrollView>

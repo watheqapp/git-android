@@ -18,6 +18,7 @@
 
 
             <TextView
+                android:id="@+id/info_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_20sdp"
@@ -43,30 +44,51 @@
                 android:paddingStart="@dimen/_5sdp"
                 android:paddingTop="@dimen/_15sdp"
                 android:textColor="@color/united_blue" />
-
-            <EditText
-                android:id="@+id/civil_registry"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginEnd="@dimen/_30sdp"
-                android:layout_marginStart="@dimen/_30sdp"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:background="@drawable/rounded_corner"
-                android:hint="@string/civil_registry"
-                android:paddingBottom="@dimen/_15sdp"
-                android:paddingEnd="@dimen/_5sdp"
-                android:paddingStart="@dimen/_5sdp"
-                android:paddingTop="@dimen/_15sdp"
-                android:textColor="@color/united_blue" />
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/civil_registry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/rounded_corner"
+                    android:hint="@string/civil_registry"
+                    android:paddingBottom="@dimen/_15sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_15sdp"
+                    android:textColor="@color/united_blue"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/civil_registry_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/rounded_corner"
+                    android:textSize="16sp"
+                    android:hint="@string/civil_registry"
+                    android:paddingBottom="@dimen/_15sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_15sdp"
+                    android:textColor="@color/united_blue" />
+            </FrameLayout>
+
+
 
             <TextView
+                android:id="@+id/company_case"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_30sdp"
                 android:layout_marginStart="@dimen/_30sdp"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:text="@string/commercial_register" />
+                android:layout_marginTop="@dimen/_5sdp" />
 
         </LinearLayout>
 

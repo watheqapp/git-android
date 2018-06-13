@@ -3,6 +3,7 @@ package com.watheq.watheq.utils;
 
 import android.content.ContentUris;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.graphics.Bitmap;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 
 
 import com.watheq.watheq.R;
+import com.watheq.watheq.base.BaseActivity;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
@@ -232,5 +234,34 @@ public class FileUtils {
 
     private static void showToast(String string, Context context) {
         Toast.makeText(context, string, Toast.LENGTH_SHORT).show();
+    }
+
+    public static String onResult(Intent data, Context context) {
+        Bitmap bmb = null;
+        Uri uri = data.getData();
+        Log.v("schemaRes", uri.getScheme());
+        int dataSize = 0;
+        InputStream fileInputStream;
+        try {
+            fileInputStream = context.getContentResolver().openInputStream(uri);
+            if (fileInputStream != null) {
+                dataSize = fileInputStream.available();
+            }
+            if (dataSize > 2000000) {
+                ((BaseActivity) context).showSnackBar(context.getString(R.string.file_size));
+                return null;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            bmb = MediaStore.Images.Media.getBitmap(context.getContentResolver(), uri);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return encodeImage(bmb);
+
     }
 }

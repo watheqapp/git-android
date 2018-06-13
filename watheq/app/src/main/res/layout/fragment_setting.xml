@@ -48,39 +48,22 @@
                             android:textColor="@color/pastel_blue"
                             android:textSize="16sp" />
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="0.5dp"
-                            android:layout_marginEnd="@dimen/_10sdp"
-                            android:layout_marginStart="@dimen/_10sdp"
-                            android:background="@color/schedule_un_selected_day" />
+                        <!--<View-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="0.5dp"-->
+                            <!--android:layout_marginEnd="@dimen/_10sdp"-->
+                            <!--android:layout_marginStart="@dimen/_10sdp"-->
+                            <!--android:background="@color/schedule_un_selected_day" />-->
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:drawableEnd="@drawable/ic_arrow"
-                            android:gravity="start"
-                            android:padding="@dimen/_10sdp"
-                            android:text="@string/credit"
-                            android:textColor="@color/pastel_blue"
-                            android:textSize="16sp" />
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="0.5dp"
-                            android:layout_marginEnd="@dimen/_10sdp"
-                            android:layout_marginStart="@dimen/_10sdp"
-                            android:background="@color/schedule_un_selected_day" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:drawableEnd="@drawable/ic_arrow"
-                            android:gravity="start"
-                            android:padding="@dimen/_10sdp"
-                            android:text="@string/oprations"
-                            android:textColor="@color/pastel_blue"
-                            android:textSize="16sp" />
+                        <!--<TextView-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:drawableEnd="@drawable/ic_arrow"-->
+                            <!--android:gravity="start"-->
+                            <!--android:padding="@dimen/_10sdp"-->
+                            <!--android:text="@string/credit"-->
+                            <!--android:textColor="@color/pastel_blue"-->
+                            <!--android:textSize="16sp" />-->
 
                         <View
                             android:layout_width="match_parent"
@@ -89,7 +72,25 @@
                             android:layout_marginStart="@dimen/_10sdp"
                             android:background="@color/schedule_un_selected_day" />
 
+                        <!--<TextView-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:drawableEnd="@drawable/ic_arrow"-->
+                            <!--android:gravity="start"-->
+                            <!--android:padding="@dimen/_10sdp"-->
+                            <!--android:text="@string/oprations"-->
+                            <!--android:textColor="@color/pastel_blue"-->
+                            <!--android:textSize="16sp" />-->
+
+                        <!--<View-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="0.5dp"-->
+                            <!--android:layout_marginEnd="@dimen/_10sdp"-->
+                            <!--android:layout_marginStart="@dimen/_10sdp"-->
+                            <!--android:background="@color/schedule_un_selected_day" />-->
+
                         <TextView
+                            android:id="@+id/report_problem"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableEnd="@drawable/ic_arrow"
@@ -135,6 +136,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/terms"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableEnd="@drawable/ic_arrow"
@@ -169,6 +171,7 @@
                             android:background="@color/schedule_un_selected_day" />
 
                         <TextView
+                            android:id="@+id/policy"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableEnd="@drawable/ic_arrow"
