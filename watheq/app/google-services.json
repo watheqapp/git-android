@@ -8,12 +8,79 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:96166899429:android:bffd03dd3a50e5f0",
+        "android_client_info": {
+          "package_name": "com.watheq.laywer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "96166899429-hpmkfrjbeo1k80pvt4nhqgt1bld130n9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.watheq.laywer",
+            "certificate_hash": "150a6321bfecb029735774334be7702733fe1738"
+          }
+        },
+        {
+          "client_id": "96166899429-gdmdvtl16n7jl649c8vvu9kqre6t3nve.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.watheq.laywer",
+            "certificate_hash": "01b09e8c3a9ab521210d6b0b42acc5d2968952bf"
+          }
+        },
+        {
+          "client_id": "96166899429-qg0bbnju853sjld74btqd8fn73qo356e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6d6Cyz9bhoeyx1MQu8gTsLelZY_DwYvU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "96166899429-djc4tjq9su70uprd8fb6i14653e7taun.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.watheq.watheqmowtheq"
+              }
+            },
+            {
+              "client_id": "96166899429-qg0bbnju853sjld74btqd8fn73qo356e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:96166899429:android:9bbdc49ce64e72a2",
         "android_client_info": {
           "package_name": "com.watheq.watheq"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "96166899429-rqe4vpsrs434j2iv9lngtpro0u72p349.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.watheq.watheq",
+            "certificate_hash": "50dec7177c244e49e6832cb624e0ce5e4845033d"
+          }
+        },
         {
           "client_id": "96166899429-t4blq3imoa4uio337n1pcrcrdck1lfgd.apps.googleusercontent.com",
           "client_type": 1,
@@ -40,10 +107,10 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "96166899429-cfrigp65003rremdurq8f3qqq1unusq8.apps.googleusercontent.com",
+              "client_id": "96166899429-djc4tjq9su70uprd8fb6i14653e7taun.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "Com.cloudz.Watheq"
+                "bundle_id": "com.watheq.watheqmowtheq"
               }
             },
             {
